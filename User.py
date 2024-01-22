@@ -1,14 +1,27 @@
 import itertools
 class User:
-    '''
-    Модифицировать класс таким образом, чтобы для объектов
-    работал следующий код:
-    users = [User(), User(), User(), User(), User(), User()]
-    import random
-    for user in users:
-        user.addMoney(random.randint(0, 100000))
-    print(max(users))
-    '''
+    def addMoney(self, amount):
+        self.money += amount
+
+    def __repr__(self):
+        return str(self.money)
+
+    def __lt__(self, other):
+        return self.money < other.money
+
+    def __eq__(self, other):
+        return self.money == other.money
+
+    def __gt__(self, other):
+        return self.money > other.money
+
+    def __ge__(self, other):
+        return self.money >= other.money
+
+    def __le__(self, other):
+        return self.money <= other.money
+
+
     userId = itertools.count()
     def __init__(self):
         self.id = next(User.userId)
@@ -17,8 +30,5 @@ class User:
         return f'User ID {self.id}'
 
     def addMoney(self, nom, count):
-        '''
-        :param nom: номинал
-        :param count: количество купюр
-        метод должен увеличить баланс пользователя
-        '''
+        def increase_balance(nom, count):
+            pass

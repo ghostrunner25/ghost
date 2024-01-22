@@ -1,6 +1,8 @@
 def PalindromeFilter(arg, minLength):
-    '''
-    :param arg: список строк
-    :return: список строк, которые являются
-    палиндромами и имеют длину не меньше minLength
-    '''
+    def palindrome_strings(arg, minLength):
+        result = []
+        for string in arg:
+            if string == string[::-1] and len(string) >= minLength:
+                result.append(string)
+        return result
+
